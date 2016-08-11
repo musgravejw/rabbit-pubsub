@@ -1,0 +1,28 @@
+{
+  "name": "rabbit-pubsub",
+  "description": "amqplib wrapper for easier rabbitmq scripting of pub/sub model",
+  "version": "0.1.0",
+  "author": "John Musgrave",
+  "bugs": {
+    "url": "https://github.com/onmodulus/rabbit-pubsub/issues"
+  },
+  "homepage": "https://github.com/onmodulus/rabbit-pubsub#readme",
+  "keywords": [
+    "amqp",
+    "amqplib",
+    "pub",
+    "pubsub",
+    "rabbit",
+    "rabbitmq",
+    "sub"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onmodulus/rabbit-pubsub.git"
+  },
+  "scripts": {
+    "test": "lab -cl"
+  }
+}
