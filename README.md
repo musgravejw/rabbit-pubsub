@@ -1,34 +1,56 @@
-# rabbit-pubsub
+## Rabbit-PubSub
 
-[![npm][npm-image]][npm-url]
-[![travis][travis-image]][travis-url]
-[![standard][standard-image]][standard-url]
+[![version](https://img.shields.io/npm/v/@modulus/rabbit-pubsub.svg?style=flat-square)][version]
+[![build](https://img.shields.io/travis/onmodulus/rabbit-pubsub/master.svg?style=flat-square)][build]
+[![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)][license]
 
-[npm-image]: https://img.shields.io/npm/v/rabbit-pubsub.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/rabbit-pubsub
-[travis-image]: https://img.shields.io/travis/musgravejw/rabbit-pubsub.svg?style=flat-square
-[travis-url]: https://travis-ci.org/musgravejw/rabbit-pubsub
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
-[standard-url]: http://npm.im/standard
+amqplib wrapper for easier rabbitmq scripting of pub/sub model
 
-amqplib wrapper for easier rabbitmq scripting of pub&#x2F;sub model
+### Install
 
-## Install
+`npm install @modulus/rabbit-pubsub`
+
+### Usage
+
+#### `RabbitPubSub(url, [options])`
+
+The exported function takes the same parameters as [`amqplib.connect`][amqplib],
+and returns a object with two exported functions, `publish` and `subscribe`.
+
+#### `Publish(exchange, message, done)`
+
+Sends data to subscribers and yields.
 
 ```
-npm install rabbit-pubsub
+const PubSub = require('@modulus/rabbit-rpc')(url)
+
+PubSub.publish('tasks', { message: true }, (err, result) => {
+  if (err) throw err // unable to publish
+
+  console.log('message delivered')
+})
 ```
 
-## Usage
+#### `Subscribe(exchange, worker)`
 
-```js
-var rabbitPubsub = require('rabbit-pubsub')
+Consumes messages on subscribed topics and passes them to worker. When worker calls
+done acknowledges the message and sends the result to the client.
+
+```
+const PubSub = require('@modulus/rabbit-rpc')(url)
+
+PubSub.subscribe('rpc-queue', (msg, done) => {
+  // do work
+  done(null, { result: true })
+})
 ```
 
-## Contributing
+## Contribute
 
 Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.
 
-## License
+[amqplib]: http://www.squaremobius.net/amqp.node/channel_api.html#connect
 
-[MIT](LICENSE.md)
+[version]: https://www.npmjs.com/package/@modulus/rabbit-pubsub
+[build]: https://travis-ci.org/onmodulus/rabbit-pubsub
+[license]: https://raw.githubusercontent.com/onmodulus/rabbit-pubsub/master/LICENSE
