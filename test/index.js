@@ -1,6 +1,6 @@
-var test = require('tape')
+var Test = require('tape');
 
-test('Example Test', function (t) {
-  t.plan(1)
-  t.error('No tests defined.')
-})
+Test('Example Test', function (test) {
+  test.plan(1);
+  test.error('No tests defined.');
+});
