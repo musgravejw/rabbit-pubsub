@@ -24,11 +24,6 @@ This repository uses [`standard`][standard-url] to maintain code style and consi
 [semistandard-image]: https://cdn.rawgit.com/flet/semistandard/master/badge.svg
 [semistandard-url]: https://github.com/Flet/semistandard
 
-# Project Governance
-
-**This is an [OPEN Open Source Project](http://openopensource.org/).**
-
-Individuals making significant and valuable contributions are given commit access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.
 
 ## Rules
 

@@ -17,6 +17,7 @@ amqplib wrapper for easier rabbitmq scripting of pub/sub model
 The exported function takes the same parameters as [`amqplib.connect`][amqplib],
 and returns a object with two exported functions, `publish` and `subscribe`.
 
+
 #### `Publish(exchange, message, done)`
 
 Sends data to subscribers and yields.
@@ -31,6 +32,7 @@ PubSub.publish('tasks', { message: true }, (err, result) => {
 })
 ```
 
+
 #### `Subscribe(exchange, worker)`
 
 Consumes messages on subscribed topics and passes them to worker. When worker calls
@@ -39,7 +41,7 @@ done acknowledges the message and sends the result to the client.
 ```
 const PubSub = require('@modulus/rabbit-rpc')(url)
 
-PubSub.subscribe('rpc-queue', (msg, done) => {
+PubSub.subscribe('tasks', (msg, done) => {
   // do work
   done(null, { result: true })
 })
