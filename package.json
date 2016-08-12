@@ -1,7 +1,7 @@
 {
   "name": "@modulus/rabbit-pubsub",
   "description": "amqplib wrapper for easier rabbitmq scripting of pub/sub model",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "John Musgrave <jmusgrav@progress.com",
   "bugs": {
     "url": "https://github.com/onmodulus/rabbit-pubsub/issues"
