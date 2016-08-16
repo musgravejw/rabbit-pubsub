@@ -25,7 +25,7 @@ Sends data to subscribers and yields.
 ```
 const PubSub = require('@modulus/rabbit-rpc')(url)
 
-PubSub.publish('tasks', { message: true }, (err, result) => {
+PubSub.publish('tasks', { message: true }, (err) => {
   if (err) throw err // unable to publish
 
   console.log('message delivered')
