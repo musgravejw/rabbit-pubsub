@@ -10,7 +10,8 @@
     "@modulus/standard": "0.6.0",
     "code": "1.5.0",
     "lab": "6.2.0",
-    "sinon": "1.17.4"
+    "sinon": "1.17.4",
+    "tape": "4.6.0"
   },
   "homepage": "https://github.com/onmodulus/rabbit-pubsub#readme",
   "keywords": [
@@ -32,10 +33,11 @@
     "coverage": "lab -r html -o coverage/index.html -r lcov -o coverage/lcov.info",
     "pretest": "npm run lint",
     "lint": "mod-standard",
-    "test": "lab -cl"
+    "test": "tape test"
   },
   "dependencies": {
     "@modulus/rabbit-channel": "1.0.0",
     "serialize-error": "2.0.0"
   }
 }
+
