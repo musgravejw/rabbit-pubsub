@@ -7,7 +7,7 @@
     "url": "https://github.com/onmodulus/rabbit-pubsub/issues"
   },
   "devDependencies": {
-    "@modulus/standard": "0.6.0",
+    "standard": "7.1.2",
     "code": "1.5.0",
     "lab": "6.2.0",
     "sinon": "1.17.4",
@@ -32,7 +32,7 @@
   "scripts": {
     "coverage": "lab -r html -o coverage/index.html -r lcov -o coverage/lcov.info",
     "pretest": "npm run lint",
-    "lint": "mod-standard",
+    "lint": "standard",
     "test": "tape test"
   },
   "dependencies": {
